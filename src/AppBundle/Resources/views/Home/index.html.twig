@@ -34,11 +34,13 @@
             </form>
         </div>
 
-        <div class="row results">
-            <div hidden id="loading" class="row text-center">
-                <img src="{{ asset('img/ajax-loader.gif') }}" alt="">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 results">
+                <div hidden id="loading" class="row text-center">
+                    <img src="{{ asset('img/ajax-loader.gif') }}" alt="">
+                </div>
+                <ul class="list-group"></ul>
             </div>
-            <ul></ul>
         </div>
     </div>
 {% endblock %}

@@ -41,7 +41,7 @@ class OfficeFetcher {
 
 
         $.ajax({
-            url: "app_dev.php/api/v1/offices/search",
+            url: "api/v1/offices/search",
             type: "get",
             data: data,
             success: (response) => {
@@ -72,7 +72,12 @@ class OfficeFetcher {
         var html = '';
         for(let office of this.offices) {
             console.log(office);
-            html += `<li>Kantoor te ${office.street}, ${office.city}</li>`;
+            html += `<a href="#" class="list-group-item">Kantoor te ${office.street}, ${office.city}`;
+
+            if(typeof office.distance !== 'undefined') {
+                html += `<span class="pull-right">${parseFloat(office.distance).toFixed(2)} km away</span>`;
+            }
+            html += '</a>';
         }
 
         this.view.html(html);
