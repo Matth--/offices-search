@@ -1,5 +1,5 @@
 home:
-  resource: '@AppBundle/Controller/Homecontroller.php'
+  resource: '@AppBundle/Controller/HomeController.php'
   type: annotation
   prefix: /
 
