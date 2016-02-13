@@ -1,0 +1,30 @@
+{
+    "name": "matthc/offices-search",
+    "description": "Search offices near Belgian cities",
+    "type": "Application",
+    "require": {
+        "symfony/symfony": "^3.0",
+        "sensio/framework-extra-bundle": "^3.0",
+        "doctrine/doctrine-bundle": "^1.6",
+        "friendsofsymfony/rest-bundle": "^1.7",
+        "jms/serializer-bundle": "^1.1",
+        "nelmio/api-doc-bundle": "^2.11",
+        "doctrine/orm": "^2.5",
+        "doctrine/annotations": "^1.2",
+        "beberlei/DoctrineExtensions": "^1.0",
+        "symfony/validator": "^3.0",
+        "phpunit/phpunit": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthieu",
+            "email": "matthieu.calie@dx-solutions.be"
+        }
+    ]
+}

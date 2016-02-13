@@ -1,0 +1,40 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: services.yml }
+
+framework:
+    secret: "%secret%"
+    validation: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        mapping_types:
+            enum: string
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: true
+        dql:
+            numeric_functions:
+                acos: DoctrineExtensions\Query\Mysql\Acos
+                cos: DoctrineExtensions\Query\Mysql\Cos
+                radians: DoctrineExtensions\Query\Mysql\Radians
+                sin: DoctrineExtensions\Query\Mysql\Sin
+
+fos_rest:
+    param_fetcher_listener: force
+    routing_loader:
+        default_format: json
+        include_format: false
+    exception:
+        enabled: false
+
+nelmio_api_doc: ~

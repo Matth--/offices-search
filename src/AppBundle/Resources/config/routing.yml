@@ -1,0 +1,9 @@
+home:
+  resource: '@AppBundle/Controller/Homecontroller.php'
+  type: annotation
+  prefix: /
+
+api:
+  resource: '@AppBundle/Controller/ApiController.php'
+  type: rest
+  prefix: /api/v1
