@@ -37,8 +37,6 @@ class OfficeFetcher {
                 has_support_desk: has_support_desk,
             }
         }
-        console.log(data);
-
 
         $.ajax({
             url: "api/v1/offices/search",
@@ -71,7 +69,6 @@ class OfficeFetcher {
         this.stopLoading();
         var html = '';
         for(let office of this.offices) {
-            console.log(office);
             html += `<a href="#" class="list-group-item">Kantoor te ${office.street}, ${office.city}`;
 
             if(typeof office.distance !== 'undefined') {
@@ -85,7 +82,6 @@ class OfficeFetcher {
 
     refetch(){
         if(this.place) {
-            console.log(this.place);
             this.fetchOffices(this.place);
         }
     }
