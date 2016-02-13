@@ -69,7 +69,7 @@ class OfficeFetcher {
         this.stopLoading();
         var html = '';
         for(let office of this.offices) {
-            html += `<a href="#" class="list-group-item">Kantoor te ${office.street}, ${office.city}`;
+            html += `<a target="_blank" href="https://maps.google.com/maps?q=${office.latitude},${office.longitude}" class="list-group-item">Kantoor te ${office.street}, ${office.city}`;
 
             if(typeof office.distance !== 'undefined') {
                 html += `<span class="pull-right">${parseFloat(office.distance).toFixed(2)} km away</span>`;

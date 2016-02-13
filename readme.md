@@ -17,3 +17,6 @@ Api documentation can be seen by using the route: ```api/doc```
 ###Changing javascript
 The javascript files can be found in the src/AppBundle/Resources/public folder
 Here you can change the javascript. To use the new javascript, run the ```gulp``` command.
+
+### concatenate/uglify for production
+run ```gulp production``` to concatenate/uglify files for production
