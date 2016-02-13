@@ -6,6 +6,15 @@ use Doctrine\ORM\EntityRepository;
 
 class OfficesRepository extends EntityRepository
 {
+    /**
+     * Find offices by City name
+     * filtering is possible by checking if the offices are open in weekens or if they have a support desk
+     *
+     * @param $name
+     * @param $is_open_in_weekends
+     * @param $has_support_desk
+     * @return array
+     */
     public function findByCity($name, $is_open_in_weekends, $has_support_desk)
     {
         $parameters = array(
@@ -30,6 +39,17 @@ class OfficesRepository extends EntityRepository
             ->getResult();
     }
 
+    /**
+     * Find offices by latitude and longitude
+     * filtering is possible by checking if the offices are open in weekens or if they have a support desk
+     *
+     * @param $lat
+     * @param $long
+     * @param $is_open_in_weekends
+     * @param $has_support_desk
+     * @param int $distance
+     * @return array
+     */
     public function findByLatAndLong($lat, $long, $is_open_in_weekends, $has_support_desk, $distance = 25)
     {
         $parameters = array(

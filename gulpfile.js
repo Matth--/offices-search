@@ -37,3 +37,21 @@ gulp.task('default', function() {
 gulp.task('watch', ['default'], function () {
     gulp.watch(['./src/AppBundle/Resources/public/js/**/*.js'], ['default']);
 });
+
+gulp.task('production', function() {
+    gulp.src(js_custom)
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('web/js'))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('web/js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('web/js'));
+
+    gulp.src(js_vendor)
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('web/js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('web/js'));
+})

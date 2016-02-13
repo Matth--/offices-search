@@ -13,6 +13,8 @@ class OfficeFetcher {
     }
 
     fetchOffices(place){
+        this.clearView();
+        this.startLoading();
         this.place = place;
 
         let is_open_in_weekends = this.isOpenInWeekends.is(':checked');
@@ -57,7 +59,16 @@ class OfficeFetcher {
         this.view.html('');
     }
 
+    startLoading(){
+        $('#loading').show();
+    }
+
+    stopLoading(){
+        $('#loading').hide();
+    }
+
     populateView(){
+        this.stopLoading();
         var html = '';
         for(let office of this.offices) {
             console.log(office);
